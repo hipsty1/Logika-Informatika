@@ -1,160 +1,136 @@
-# Sistem Seleksi Beasiswa Kampus
+# 📊 Sistem Seleksi Kelayakan Beasiswa Mahasiswa (Logika Informatika)
 
-## Deskripsi
+## 📌 Deskripsi Proyek
 
-Proyek ini dibuat sebagai implementasi materi **Logika Informatika** menggunakan bahasa **C++**.
+Proyek ini merupakan implementasi konsep **Logika Informatika (operator logika AND, OR, dan boolean decision system)** menggunakan bahasa C++.
 
-Program digunakan untuk membantu proses seleksi awal penerima beasiswa berdasarkan aturan yang telah ditentukan oleh pihak kampus. Sistem akan mengevaluasi data mahasiswa dan menentukan status kelayakan secara otomatis.
-
----
-
-## Latar Belakang
-
-Proses seleksi beasiswa sering dilakukan secara manual dengan memeriksa data mahasiswa satu per satu. Cara ini membutuhkan waktu yang lama dan berpotensi menimbulkan kesalahan.
-
-Melalui program ini, proses seleksi dapat dilakukan secara lebih cepat, konsisten, dan sesuai dengan aturan yang berlaku.
+Sistem ini digunakan untuk menentukan kelayakan mahasiswa penerima beasiswa berdasarkan kriteria akademik dan non-akademik.
 
 ---
 
-## Studi Kasus
+## 🎯 Latar Belakang Masalah
 
-### Stakeholder
+Proses seleksi beasiswa sering mengalami masalah seperti:
+
+- Penilaian tidak konsisten
+- Sulitnya menggabungkan beberapa kriteria
+- Proses manual yang tidak efisien
+
+Sistem ini dibuat untuk membantu proses pengambilan keputusan berbasis logika formal.
+
+---
+
+## 👤 Stakeholder
 
 Wakil Dekan Bidang Kemahasiswaan
 
-### Permasalahan
+---
 
-Setiap semester terdapat ratusan mahasiswa yang mendaftar beasiswa. Staf akademik harus memeriksa kelayakan masing-masing mahasiswa secara manual.
+## 🧩 Kebutuhan Sistem
 
-### Solusi
+Sistem harus mampu:
 
-Membuat sistem sederhana yang dapat menentukan apakah mahasiswa **Layak** atau **Tidak Layak** menerima beasiswa berdasarkan aturan yang telah ditentukan.
+- Menerima data mahasiswa
+- Mengevaluasi IPK
+- Mengevaluasi kondisi ekonomi
+- Mengevaluasi prestasi
+- Menghasilkan keputusan akhir (Layak / Tidak Layak)
 
 ---
 
-## Aturan Bisnis
+## 📐 Model Logika Sistem
 
-Mahasiswa dinyatakan **LAYAK** jika memenuhi salah satu kondisi berikut:
+Keputusan ditentukan dengan logika:
 
-### Kondisi 1
-
-* IPK ≥ 3.50
-* Penghasilan Orang Tua < Rp5.000.000
-
-Logika:
-
-(IPK >= 3.50) AND (Penghasilan < 5000000)
-
-### Kondisi 2
-
-* Memiliki prestasi Juara Nasional
-
-Logika:
-
-Juara Nasional = TRUE
-
-### Bentuk Logika Lengkap
-
-((IPK >= 3.50) AND (Penghasilan < 5000000)) OR (Juara Nasional)
+(IPK ≥ 3.50 AND Penghasilan < 5.000.000) OR (Prestasi = TRUE)
 
 ---
 
-## Input
+## ⚙️ Aturan Sistem (Business Rules)
 
-Program menerima data:
-
-* Nama Mahasiswa
-* IPK
-* Penghasilan Orang Tua
-* Status Juara Nasional
+1. Mahasiswa layak jika memenuhi salah satu kondisi logika  
+2. Semua input harus valid  
+3. Prestasi berupa boolean (Ya / Tidak)  
+4. Sistem berbasis logika proposisional sederhana  
 
 ---
 
-## Output
+## 💻 Fitur Program
 
-Program menampilkan:
-
-* Nama Mahasiswa
-* IPK
-* Penghasilan Orang Tua
-* Status Juara Nasional
-* Hasil Seleksi (Layak / Tidak Layak)
-
----
-
-## Materi yang Dipelajari
-
-* Variabel
-* Input dan Output
-* Tipe Data
-* Operator Relasional
-* Operator Logika
-* AND (&&)
-* OR (||)
-* If Else
-* Truth Table
-* Requirement Analysis
+- Input nama mahasiswa  
+- Input IPK  
+- Input penghasilan orang tua  
+- Input status prestasi  
+- Evaluasi otomatis  
+- Output status kelayakan  
 
 ---
 
-## Contoh Penggunaan
+## 🧠 Konsep yang Dipelajari
 
-Input:
-
-Nama: Hen
-IPK: 3.75
-Penghasilan: 4500000
-Juara Nasional: 0
-
-Output:
-
-===== HASIL SELEKSI =====
-
-Nama : Hen
-IPK : 3.75
-Penghasilan Orang Tua : 4500000
-Juara Nasional : Tidak
-Hasil Seleksi : Layak
+- Logika AND  
+- Logika OR  
+- Boolean algebra  
+- Operator relasional  
+- Percabangan (IF-ELSE)  
+- Decision making system  
 
 ---
 
-## Struktur Logika
+## 📊 Contoh Input
 
-A = IPK >= 3.50
-
-B = Penghasilan < 5000000
-
-C = Juara Nasional
-
-Rumus:
-
-(A AND B) OR C
+Nama: Andi  
+IPK: 3.75  
+Penghasilan: 4.000.000  
+Prestasi: Ya  
 
 ---
 
-## Pengembangan Selanjutnya
+## 📤 Contoh Output
 
-* Validasi input IPK
-* Validasi penghasilan tidak boleh negatif
-* Input banyak mahasiswa
-* Statistik jumlah mahasiswa layak dan tidak layak
-* Penyimpanan data ke file
-* Integrasi database
+Status: LAYAK  
 
 ---
 
-## Teknologi
+## 🚧 Batasan Sistem
 
-* C++
-* Visual Studio Code
-* MinGW-w64
-* Git
-* GitHub
+- CLI-based program  
+- Tidak ada database  
+- Tidak ada GUI  
+- Input manual  
+- Logika sederhana  
 
 ---
 
-## Author
+## 🔮 Pengembangan Selanjutnya
 
-Hen
+- Multi kriteria scoring system  
+- Ranking beasiswa  
+- Sistem bobot nilai  
+- Integrasi database mahasiswa  
+- Dashboard analisis  
 
-Proyek pembelajaran semester 1 – Logika Informatika.
+---
+
+## 🛠️ Teknologi
+
+- C++  
+- GCC / MinGW  
+- VS Code  
+- Terminal / CLI  
+
+---
+
+## 👨‍💻 Tujuan Proyek
+
+- Implementasi logika informatika  
+- Latihan operator boolean  
+- Simulasi pengambilan keputusan  
+- Portfolio akademik  
+
+---
+
+## ✍️ Author
+
+Hendri Prasetyo  
+Mahasiswa Informatika’24  
